@@ -27,3 +27,10 @@ class UserManager:
 
 
 if __name__ == "__main__":
+    user_manager= UserManager()
+    for i in range(500):
+        user_manager.add_user(i,f"Yo soz el numero : {i}")
+    
+    print("end")
+
+

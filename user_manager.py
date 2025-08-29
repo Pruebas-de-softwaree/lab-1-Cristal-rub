@@ -39,8 +39,10 @@ if __name__ == "__main__":
     #for i in range(500): 
         #user_manager.delete_user(i)
 
+    #all=user_manager.get_all_names()
+    #print(all)
 
-    all=user_manager.get_all_names()
+    all=user_manager.average_user_id()
     print(all)
     
 

@@ -57,11 +57,25 @@ if __name__ == "__main__":
     #print("end")
 
 #RNF2: Tiempo de busqueda #time.time para calcular el tiempo.
-    start = time.time()
-    user = user_manager.find_user(1000)
-    timekeeper = time.time() - start
-    if timekeeper < 0.01:
-        print(f"Tiempo de busqueda por ID menor a 0.01s")
+    #start = time.time()
+    #user = user_manager.find_user(1000)
+    #timekeeper = time.time() - start
+    #if timekeeper < 0.01:
+        #print(f"Tiempo de busqueda por ID menor a 0.01s")
+    #else:
+        #print(f"Tiempo de busqueda por ID mayor a 0.01s")
+
+#RNF3: Eliminar IDs duplicados.
+    for i in range(500): 
+        user_manager.add_user(i,f"Soy el número: {i}")
+
+        user_manager.add_user(50, "Duplicado")
+        nBefore = len(user_manager.users)
+        user_manager.delete_user(50)
+        nAfter = len(user_manager.users)
+    if nAfter == nBefore - 1:
+        print(f"Se borro el ID duplicado")
     else:
-        print(f"Tiempo de busqueda por ID mayor a 0.01s")
+        print("error")
+
     print("end")

@@ -75,7 +75,7 @@ if __name__ == "__main__":
     else:
         print("error")'''
 
-#Rendimiento 
+#Rendimiento: Agrega 1000 usuarios y mide el tiempo de búsqueda del usuario 500.
     '''for i in range(1000): 
         user_manager.add_user(i, f"Soy el número: {i}")
         start = time.time()
@@ -84,11 +84,14 @@ if __name__ == "__main__":
         if user and user["id"] == 499:  
             print(f"Hola, soy el número: {i+1}, tardaste {timekeeper:.6f}s en encontrarme")
             print("end")'''
-#Robustez
-    for i in range(500): 
+#Robustez: Prueba eliminar un usuario que no existe.
+    '''for i in range(500): 
         user_manager.add_user(i, f"Soy el número: {i}")
         print("end")
     user_manager.delete_user(501)
-    print("end")  
+    print("end")'''
+#Robustez: Calcula average_user_id en lista vacía.
+    all=user_manager.average_user_id()
+    print(all)
 
     print("end")

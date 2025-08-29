@@ -25,28 +25,36 @@ class UserManager:
     def average_user_id(self):
         return sum([u["id"] for u in self.users]) / len(self.users)
 
-
 if __name__ == "__main__":
     user_manager = UserManager()
-   
+#RF1: Agregar usuario:
+    #for i in range(500): 
+        #user_manager.add_user(i,f"Soy el número: {i}")
+    #print("end")
+
+#RF2: Buscar usuario:   
     #for i in range(500): 
         #user_manager.find_user(i)
     #print("end")
 
-    for i in range(500): 
-        user_manager.add_user(i,f"Soy el número: {i}")
-    print("end")
+#RF3: Eliminar usuario
     #for i in range(500): 
         #user_manager.delete_user(i)
-
+    #print("end")
+     
+#RF4: Obtener todos los usuarios.
     #all=user_manager.get_all_names()
     #print(all)
+    #time.time para calcular el tiempo.
 
-    all=user_manager.average_user_id()
-    print(all)
-    
+#RF5: Promediar usuarios.
+    #all=user_manager.average_user_id()
+    #print(all)
 
-
-
+#RNF1: Manejar 1000 usuarios.
+    for i in range(1000): 
+        user_manager.add_user(i,f"Soy el número: {i}")
+    assert len(user_manager.users) == 1000 #Verifica el código.
+    print("end")
 
     print("end")

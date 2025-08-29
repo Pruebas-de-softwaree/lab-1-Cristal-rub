@@ -45,16 +45,23 @@ if __name__ == "__main__":
 #RF4: Obtener todos los usuarios.
     #all=user_manager.get_all_names()
     #print(all)
-    #time.time para calcular el tiempo.
 
 #RF5: Promediar usuarios.
     #all=user_manager.average_user_id()
     #print(all)
 
 #RNF1: Manejar 1000 usuarios.
-    for i in range(1000): 
-        user_manager.add_user(i,f"Soy el número: {i}")
-    assert len(user_manager.users) == 1000 #Verifica el código.
-    print("end")
+    #for i in range(1000): 
+        #user_manager.add_user(i,f"Soy el número: {i}")
+    #assert len(user_manager.users) == 1000 #Verifica el código.
+    #print("end")
 
+#RNF2: Tiempo de busqueda #time.time para calcular el tiempo.
+    start = time.time()
+    user = user_manager.find_user(1000)
+    timekeeper = time.time() - start
+    if timekeeper < 0.01:
+        print(f"Tiempo de busqueda por ID menor a 0.01s")
+    else:
+        print(f"Tiempo de busqueda por ID mayor a 0.01s")
     print("end")

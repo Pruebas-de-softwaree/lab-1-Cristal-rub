@@ -76,14 +76,19 @@ if __name__ == "__main__":
         print("error")'''
 
 #Rendimiento 
-    for i in range(1000): 
+    '''for i in range(1000): 
         user_manager.add_user(i, f"Soy el número: {i}")
         start = time.time()
         user = user_manager.find_user(i)  
         timekeeper = time.time() - start
         if user and user["id"] == 499:  
             print(f"Hola, soy el número: {i+1}, tardaste {timekeeper:.6f}s en encontrarme")
-            print("end")
-
+            print("end")'''
+#Robustez
+    for i in range(500): 
+        user_manager.add_user(i, f"Soy el número: {i}")
+        print("end")
+    user_manager.delete_user(501)
+    print("end")  
 
     print("end")

@@ -29,17 +29,22 @@ class UserManager:
 if __name__ == "__main__":
     user_manager = UserManager()
    
-    for i in range(500): 
-        user_manager.add_user(i,f"Soy el número: {i}")
-
-
-    for i in range(500): 
-        user_manager.delete_user(i)
-   
-
     #for i in range(500): 
         #user_manager.find_user(i)
     #print("end")
+
+    for i in range(500): 
+        user_manager.add_user(i,f"Soy el número: {i}")
+    print("end")
+    #for i in range(500): 
+        #user_manager.delete_user(i)
+
+
+    all=user_manager.get_all_names()
+    print(all)
+    
+
+
 
 
     print("end")

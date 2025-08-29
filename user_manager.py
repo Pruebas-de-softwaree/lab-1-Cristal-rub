@@ -66,16 +66,24 @@ if __name__ == "__main__":
         #print(f"Tiempo de busqueda por ID mayor a 0.01s")
 
 #RNF3: Eliminar IDs duplicados.
-    for i in range(500): 
-        user_manager.add_user(i,f"Soy el número: {i}")
-
-        user_manager.add_user(50, "Duplicado")
-        nBefore = len(user_manager.users)
-        user_manager.delete_user(50)
-        nAfter = len(user_manager.users)
+    '''user_manager.add_user(50, "Duplicado")
+    nBefore = len(user_manager.users)
+    user_manager.delete_user(50)
+    nAfter = len(user_manager.users)
     if nAfter == nBefore - 1:
         print(f"Se borro el ID duplicado")
     else:
-        print("error")
+        print("error")'''
+
+#Rendimiento 
+    for i in range(1000): 
+        user_manager.add_user(i, f"Soy el número: {i}")
+        start = time.time()
+        user = user_manager.find_user(i)  
+        timekeeper = time.time() - start
+        if user and user["id"] == 499:  
+            print(f"Hola, soy el número: {i+1}, tardaste {timekeeper:.6f}s en encontrarme")
+            print("end")
+
 
     print("end")
